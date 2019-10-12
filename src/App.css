@@ -1,11 +1,26 @@
+.column {
+  float: left;
+  width: 50%;
+  padding: 0;
+  height: 300px;
+}
+
+button {
+  padding: 0;
+}
+
 * {
-  text-align: center;
+  text-align: left;
   background-color: red;
   font-size: 23px;
 }
 
 #load_text {
   color: white;
+}
+
+img {
+	width: 100%;
 }
 
 #heading {

@@ -1,18 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { Component } from 'react'
+import Decisions from './Decisions/Decisions';
+import ReactDOM from 'react-dom';
+import './App.css';
 
 
 export default class App extends Component {
-  state = {
-    textValue: 'Upload your photo!'
-  }
 
-  onChangeHandler=event => {
-    this.setState({
-      textValue: 'Uploading'
-    })
+  click = () => {
 
+    // post request
+
+/*
     // create a new XMLHttpRequest
     var xhr = new XMLHttpRequest()
 
@@ -26,14 +24,23 @@ export default class App extends Component {
     xhr.send(JSON.stringify({ image: event.target.files[0]}))
     // send the request
     xhr.send()
+*/
+    ReactDOM.render(<Decisions />, document.getElementById('root'));
   }
 
 
   render() {
     return (
       <div id="container">
-        <p id="load_text">{this.state.textValue}</p>
-        <input id="myFileInput" type="file" accept="image/*" capture="camera" onChange={this.onChangeHandler}></input>
+        Your Picture: <input id="myFileInput" type="file" accept="image/*" capture="camera"></input>
+        <br></br>Your Age: <input id="answer1" type="text"></input>
+        <br></br>You are afraid of: <input id="answer2" type="text"></input>
+        <br></br>Your favourite animal is: <input id="answer3" type="text"></input>
+        <br></br>Your favourite sport is: <input id="answer4" type="text"></input>
+        <br></br>Your favourite color is: <input id="answer5" type="text"></input>
+        <br></br>Your current occupations is: <input id="answer6" type="text"></input>
+        <br></br>Your favourite music group is: <input id="answer7" type="text"></input>
+        <br></br><br></br><button type="button" onClick={this.click}>PLAY!</button>
       </div>
     )
   }
